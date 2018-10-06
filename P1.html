@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mostrar Numeros</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Mostrar Numeros</h1>
+<form id="formail" action="P3.php" method="post">
+<fieldset>
+<label><strong>Cantidad</strong></label>
+<input id="cantidad" name="cantidad" type="text" onkeypress="return valida(event)">
+<input id="mostrar" name="mostrar" type="button" value="Mostrar">
+</fieldset>
+</form>
+<script>
+function valida(e){
+    tecla = (document.all) ? e.keyCode : e.which;
+
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla==8){
+        return true;
+    }
+        
+    // Patron de entrada, en este caso solo acepta numeros
+    patron =/[0-9]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
+</script>
+    </body>
+</html>
